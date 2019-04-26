@@ -10,7 +10,7 @@ Primeiro um teste 100% dentro da caixa... Execute o comando abaixo:
 ```
 docker run --rm -it --name qa_portugues \ 
     -p 9090:9090 \
-    qa_portugues:latest
+    danielfalci/qa_portugues:latest
 ```
 
 ######Obs: Você precisa de uma máquina com pelo menos 4GB de RAM livre para rodar este container
@@ -56,7 +56,7 @@ docker run --rm -it --name qa_portugues \
     -p 9090:9090 \
     -v /caminho da minha maquina/:/root/application/json/ \
     -e QUESTION_FILE="novoarquivo.json" \
-    qa_portugues:latest
+    danielfalci/qa_portugues:latest
 ```
 
 Agora é só acessar http://localhost:9090/index.html e testar a performance neste novo corpus. 
