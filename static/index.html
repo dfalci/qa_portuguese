@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question&Answering for Portuguese</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <input type="text" id="campoQuery" value="O que é a lei de acesso à informação?" />
+    <input type="button" id="botaoConsultar" value="Consultar" />
+    <br />
+    <div id="resposta">
+    </div>
+
+    <script type="application/javascript">
+        $("#botaoConsultar").click(function() {
+            var query = $("#campoQuery").val()
+            console.log(encodeURIComponent(query))
+            $.ajax({
+                url: "documentos?query="+encodeURIComponent(query),
+                encoding: 'UTF-8'
+            }).then(function(data) {
+                var valor = JSON.parse(data);
+
+                $("#resposta").empty();
+
+                var container = $("#resposta");
+
+                $("<div><h2>"+valor.query+"</h2></div>").appendTo(container);
+
+                $("<div><h3>Perguntas similares</h3></div>").appendTo(container);
+                for (var i=0;i<valor.similares.length;i++){
+                    console.log(valor.similares[i]);
+                    $("<div>"+valor.similares[i].score+" - "+valor.similares[i].pergunta+"</div>").appendTo(container);
+                }
+                $("<div><h3>Resposta</h3></div>").appendTo(container);
+                $("<div>"+valor.resposta+"</div>").appendTo(container);
+            });
+        });
+    </script>
+</body>
+</html>
