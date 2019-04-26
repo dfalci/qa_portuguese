@@ -13,6 +13,8 @@ docker run --rm -it --name qa_portugues \
     qa_portugues:latest
 ```
 
+######Obs: Você precisa de uma máquina com pelo menos 4GB de RAM livre para rodar este container
+
 Agora, acesse o endereço http://localhost:9090/index.html no seu browser e faça perguntas sobre a "Lei de acesso à informação".
 
 Os resultados são muito legais não são?
