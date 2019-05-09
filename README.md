@@ -13,13 +13,13 @@ docker run --rm -it --name qa_portugues \
     danielfalci/qa_portugues:latest
 ```
 
-######Obs: Você precisa de uma máquina com pelo menos 4GB de RAM livre para rodar este container
+###### Obs: Você precisa de uma máquina com pelo menos 4GB de RAM livre para rodar este container
 
 Agora, acesse o endereço http://localhost:9090/index.html no seu browser e faça perguntas sobre a "Lei de acesso à informação".
 
 Os resultados são muito legais não são?
 
-###Personalizando as perguntas e respostas
+### Personalizando as perguntas e respostas
 
 Agora vamos customizar o sistema com perguntas e respostas inteiramente novas. Para isso, precisamos criar um novo arquivo (formato json) que contenha o novo conhecimento a ser analisado. O arquivo json utilizado no teste anterior (empacotado nesta imagem docker) segue o seguinte formato:
 
