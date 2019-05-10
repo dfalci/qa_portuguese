@@ -11,11 +11,17 @@ Primeiro um teste 100% dentro da caixa... Execute o comando abaixo:
 docker run --rm -it --name qa_portugues -p 9090:9090 danielfalci/qa_portugues:latest
 ```
 
-###### Obs: Você precisa de uma máquina com pelo menos 4GB de RAM livre para rodar este container
+###### Obs: Você precisa de uma máquina com pelo menos 8GB de RAM livre.
 
-Agora, acesse o endereço http://localhost:9090/index.html no seu browser e faça perguntas sobre a "Lei de acesso à informação".
+Aguarde até que o sistema informe (este procedimento pode demorar bastante tempo, dependendo da máquina host):
 
-Os resultados são muito legais não são?
+```terminal
+ * Running on http://0.0.0.0:9090/ (Press CTRL+C to quit)
+```
+
+Agora, acesse o endereço http://localhost:9090/index.html no seu browser e, livremente, faça perguntas previstas no faq sobre  a "Lei de acesso à informação".
+
+Legal, não?
 
 ### Personalizando as perguntas e respostas
 
@@ -45,10 +51,11 @@ Agora vamos customizar o sistema com perguntas e respostas inteiramente novas. P
   ...
 ]
 ```
+#### O json é um array de objetos onde cada objeto indica uma coleção de perguntas prototípicas que levam a uma resposta.
 
-Crie um novo arquivo com extensão json em um diretório qualquer da sua máquina. Nele, escreva o seu novo rol de perguntas e respostas, mantendo o formato indicado acima. 
+Crie um novo arquivo com extensão json em um diretório qualquer da sua máquina. Nele, escreva a sua coleção de perguntas e respostas, mantendo o formato indicado acima. 
 
-Vamos executar o sistema novamente: Desta vez, faça o bind, informando o diretório onde o corpus está gravado (-v), bem como o nome deste novo arquivo (-e). Abaixo o exemplo: 
+Vamos executar o sistema novamente: Desta vez, faremos um bind informando o diretório onde o corpus está gravado (-v), bem como o nome deste novo arquivo (-e). Abaixo o exemplo: 
 ```
 docker run --rm -it --name qa_portugues \ 
     -p 9090:9090 \
@@ -57,6 +64,6 @@ docker run --rm -it --name qa_portugues \
     danielfalci/qa_portugues:latest
 ```
 
-Agora é só acessar http://localhost:9090/index.html e testar a performance neste novo corpus. 
+Agora é só acessar http://localhost:9090/index.html e testar a performance no seu corpus exclusivo. 
 
 Para algo pré-treinado, os resultados são excepcionais não acha?
