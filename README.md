@@ -1,7 +1,7 @@
 # Usando BERT para um sistema de Question & Answering em português
 #### Daniel Falci
 
-Antes de começarmos, precisamos de um corpus de perguntas e respostas. Como teste, capturamos as perguntas disponíveis no FAQ publicado no endereço http://www.acessoainformacao.gov.br/perguntas-frequentes/aspectos-gerais-da-lei#1 . Trata-se de um corpus com treze perguntas diferentes sobre a lei de acesso à informação. Acesse o site para se familiarizar com as possibilidades de consulta previstas no FAQ.
+Antes de começarmos, precisamos de um corpus de perguntas e respostas. Como teste, capturamos as perguntas disponíveis no FAQ publicado no endereço http://www.acessoainformacao.gov.br/perguntas-frequentes/aspectos-gerais-da-lei#1 . Trata-se de um corpus com treze perguntas diferentes sobre a lei de acesso à informação. Acesse o site para se familiarizar com as perguntas respondidas neste FAQ.
 
 
 Primeiro um teste 100% dentro da caixa... Execute o comando abaixo:
@@ -58,9 +58,9 @@ Crie um novo arquivo com extensão json em um diretório qualquer da sua máquin
 Vamos executar o sistema novamente: Desta vez, faremos um bind informando o diretório onde o corpus está gravado (-v), bem como o nome deste novo arquivo (-e). Abaixo o exemplo: 
 ```
 docker run --rm -it --name qa_portugues \ 
-    -p 9090:9090 \
-    -v /caminho da minha maquina/:/root/application/json/ \
-    -e QUESTION_FILE="novoarquivo.json" \
+    -p 9090:9090 \ 
+    -v /caminho da minha maquina/:/root/application/json/ \ 
+    -e QUESTION_FILE="novoarquivo.json" \ 
     danielfalci/qa_portugues:latest
 ```
 
