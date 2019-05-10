@@ -8,9 +8,7 @@ Primeiro um teste 100% dentro da caixa... Execute o comando abaixo:
 
 
 ```
-docker run --rm -it --name qa_portugues \ 
-    -p 9090:9090 \
-    danielfalci/qa_portugues:latest
+docker run --rm -it --name qa_portugues -p 9090:9090 danielfalci/qa_portugues:latest
 ```
 
 ###### Obs: Você precisa de uma máquina com pelo menos 4GB de RAM livre para rodar este container
